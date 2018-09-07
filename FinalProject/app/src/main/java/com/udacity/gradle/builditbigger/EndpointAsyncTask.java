@@ -49,8 +49,7 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
         context = params[0];
 
         try {
-            // Forcing a dummy "name" parameter, otherwise the api returns an error
-            return myApiService.sayHi("dummy").execute().getData();
+            return myApiService.sayHi().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
