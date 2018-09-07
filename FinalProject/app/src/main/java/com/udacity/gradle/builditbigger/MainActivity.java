@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import org.ethp.joke_viewer.JokeViewerActivity;
-import org.ethp.joker.Joker;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,12 +42,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        String joke = Joker.getJoke();
 
-        Intent jokeViewerIntent = new Intent(this, JokeViewerActivity.class);
-        jokeViewerIntent.putExtra(JokeViewerActivity.EXTRA_JOKE, joke);
+        new EndpointsAsyncTask().execute(this);
 
-        startActivity(jokeViewerIntent);
     }
 
 }
