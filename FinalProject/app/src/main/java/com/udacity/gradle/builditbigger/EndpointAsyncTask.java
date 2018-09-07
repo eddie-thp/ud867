@@ -22,7 +22,8 @@ import java.io.IOException;
  *
  * and modified slightly to retrieve a joke from the joke endpoint and start an activity (from our android library) that displays it
  */
-class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+public class EndpointAsyncTask extends AsyncTask<Context, Void, String> {
+
     private static MyApi myApiService = null;
     private Context context;
 
